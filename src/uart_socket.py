@@ -8,7 +8,7 @@ def init_pipe(
     baud: int = 9600,
     data_bits: int = 8,
     stop_bits: int = 1,
-    parity: bool = None,
+    parity: str = serial.PARITY_NONE,
     timeout: float = 10,
 ) -> serial.Serial | None:
     try:
@@ -16,16 +16,16 @@ def init_pipe(
         time.sleep(1)
     except ValueError as e:
         print(f"Value Error, problem here: {e} ")
-        return 0
+        return None
     except serial.SerialException as e:
         print(f"Serial Exception!: {e}")
-        return 0
+        return None
     return Serial
 
 
 def one_shot_read(Serial: serial.Serial) -> bytes:
     try:
         byte_message = Serial.read_until()
-    except Serial.timeout():
+    except serial.SerialException:
         print("TIMEOUT WHILE WAITING FOR RX")
     return byte_message
