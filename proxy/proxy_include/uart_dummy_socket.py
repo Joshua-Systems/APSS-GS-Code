@@ -23,7 +23,14 @@ def init_pipe(
     return Serial
 
 
-def one_shot_write(Serial: serial.Serial) -> bytes:
-    RAW_BYTES = b"\xfa\x03\x8c\x99\x0a"  # <-- bytes, not string
-    print(RAW_BYTES)
+def one_shot_write_test(Serial: serial.Serial) -> None:
+    RAW_BYTES = "\xfa\x03\x8c\x99"
+    RAW_BYTES = RAW_BYTES.upper
+    print(f"{RAW_BYTES}")
     Serial.write(RAW_BYTES)
+
+
+def gps_test_data(Serial: serial.Serial) -> None:
+    GPS_MSG = "$G2;g;23:59:59 UTC;174.768807;-36.853628;61.5;2\n"
+    print(f"GPS: {GPS_MSG}")
+    Serial.write(GPS_MSG.encode())
