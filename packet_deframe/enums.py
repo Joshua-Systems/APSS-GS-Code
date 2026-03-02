@@ -1,13 +1,13 @@
 import enum
 
 
-class message_type(enum):
-    GPS = "G"
-    BASE_GPS = "B"
-    UNKNOWN = "?"
+class message_type(enum.Enum):
+    GPS = b"G"
+    BASE_GPS = b"B"
+    UNKNOWN = b"?"
 
 
-class team_id(enum):
+class team_id(enum.Enum):
     probably_stable = b"00000"
     the_retrievers = b"00001"
     kessel_runners = b"00010"
@@ -18,7 +18,7 @@ class team_id(enum):
     brain_exe = b"00111"
 
 
-class fix_type(enum):
+class fix_type(enum.Enum):
     no_fix = "n"
     GPS = "g"
     DGPS = "d"

@@ -1,7 +1,6 @@
 import abc
 
 
-@abc.ABC
 class packet(abc.ABC):
     def __init__(self):
         self.packet_type = None
@@ -10,7 +9,7 @@ class packet(abc.ABC):
 
 class team_gps(packet):
     def __init__(self):
-        super.__init__()
+        super().__init__()
         self.team_id = None
         self.latitude = None
         self.longitude = None
@@ -43,7 +42,7 @@ class team_gps(packet):
 
 class base_gps(packet):
     def __init__(self):
-        super.__init__()
+        super().__init__()
         self.latitude = None
         self.longitude = None
         self.altitude = None
