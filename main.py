@@ -1,4 +1,4 @@
-import src.uart_socket as sery
+import sock_pipe.uart_socket as sery
 
 
 def main():
