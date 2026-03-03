@@ -8,14 +8,14 @@ class message_type(enum.Enum):
 
 
 class team_id(enum.Enum):
-    probably_stable = b"00000"
-    the_retrievers = b"00001"
-    kessel_runners = b"00010"
-    team_plonk = b"00011"
-    ctrl_freaks = b"00100"
-    the_eigenvectors = b"00101"
-    djk = b"00110"
-    brain_exe = b"00111"
+    probably_stable = 0
+    the_retrievers = 1
+    kessel_runners = 2
+    team_plonk = 3
+    ctrl_freaks = 4
+    the_eigenvectors = 5
+    djk = 6
+    brain_exe = 7
 
 
 class fix_type(enum.Enum):
