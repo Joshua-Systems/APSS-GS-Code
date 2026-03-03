@@ -31,6 +31,12 @@ def one_shot_write_test(Serial: serial.Serial) -> None:
 
 
 def gps_test_data(Serial: serial.Serial) -> None:
-    GPS_MSG = "$G2;g;23:59:59 UTC;174.768807;-36.853628;61.5;2\n"
+    GPS_MSG = "$G2;g;23:59:59 UTC;174.768807;-36.853628;61.5m;2\n"
+    print(f"GPS: {GPS_MSG}")
+    Serial.write(GPS_MSG.encode())
+
+
+def gps_test_real_data(Serial: serial.Serial) -> None
+    GPS_MSG = "$G31;g;23:59:59 UTC;179.000000;1.999999;5200.0m;5\n"
     print(f"GPS: {GPS_MSG}")
     Serial.write(GPS_MSG.encode())
